@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./src/assets/fonts/icons.css">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" href="./src/assets/icon-192.png" sizes="192x192" type="image/png">
+
+    <title>nuevoMilenio</title>
+    <meta name="description" content="nuevoMilenio built with Flet-Box.">
+    <meta name="keywords" content="fletbox, framework, ui, javascript, animations, gradients">
+    <meta name="author" content="Your name">
+
+    <meta property="og:title" content="nuevoMilenio">
+    <meta property="og:description" content="nuevoMilenio built with Flet-Box.">
+    <meta property="og:type" content="website">
+
+    <meta name="theme-color" content="#1a1a2e">
+
+    <!-- ============================================================
+         GOOGLE ADSENSE (optional — disabled by default)
+
+         To monetize this app:
+           1. Get approved at https://www.google.com/adsense (you need a
+              live domain with your own content first).
+           2. Replace ca-pub-XXXXXXXXXXXXXXXX below with your publisher ID.
+           3. Activate it: delete this whole comment block but KEEP the
+              <script> tag below, so only the live <script> remains in <head>.
+           4. Place an <ins class="adsbygoogle"> unit where you want the ad,
+              or use the flet-box AdSense widget (see docs/widget/AdSense.md).
+
+         NOTE: ads only work on an approved domain, not on localhost.
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+            crossorigin="anonymous"></script>
+    ============================================================ -->
+
+    <style>
+        * { -webkit-text-size-adjust: 100%; }
+        body { margin: 0; padding: 0; font-family: system-ui, sans-serif}
+    </style>
+    <script type="importmap">
+        {
+            "imports": {
+                "flet-box": "./node_modules/flet-box/src/index.js"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(reg => console.log('Service Worker registered', reg))
+                .catch(err => console.log('Service Worker registration error', err));
+        }
+    </script>
+    <script type="module" src="src/app.js"></script>
+</body>
+</html>

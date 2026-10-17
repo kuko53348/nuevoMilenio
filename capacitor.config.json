@@ -1,0 +1,10 @@
+{
+  "appId": "com.fletbox.nuevomilenio",
+  "appName": "nuevoMilenio",
+  "webDir": "www",
+  "backgroundColor": "#1a1a2e",
+  "server": {
+    "androidScheme": "https",
+    "iosScheme": "https"
+  }
+}
