@@ -6,7 +6,7 @@ import { COMPANY, LINKS } from '../../database/company.js';
 import { Section } from '../ui/Section.js';
 import { SectionHeading } from '../ui/SectionHeading.js';
 
-export const FaqSection = ({ title = 'Preguntas frecuentes', subtitle = null }) =>
+export const FaqSection = ({ title = 'Preguntas frecuentes', subtitle = null } = {}) =>
   Section({
     id: 'faq',
     bgColor: brand.cream,

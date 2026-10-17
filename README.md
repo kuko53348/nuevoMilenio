@@ -1,7 +1,31 @@
-# nuevoMilenio
+# Propiedades Nuevo Milenio — Landing (Flet-Box)
 
-FletBox app with 3 screens: Root, Home and About, plus Drawer menu.
-The generated Capacitor configuration uses package id `com.fletbox.nuevomilenio`.
+Landing de marketing para la inmobiliaria **Propiedades Nuevo Milenio**, hecha
+con [Flet-Box](./node_modules/flet-box). Página estática de 4 secciones con
+barra de pestañas superior (desktop) y botón de menú (móvil).
+
+## Contenido del sitio
+
+| Ruta      | Pantalla           | Qué incluye |
+|-----------|--------------------|-------------|
+| `/`       | `InicioScreen`     | Hero, stats, servicios, proceso, catálogo (Facebook), por qué elegirnos, testimonios, FAQ, contacto |
+| `/info`   | `InfoScreen`       | Historia, cobertura y detalles de los servicios de la inmobiliaria |
+| `/acerca` | `AcercaScreen`     | Quién está detrás (Moises Araya Carmona) |
+| `/dev`    | `DevScreen`        | Sección del desarrollador (datos editables) |
+
+**Los datos del negocio viven solo en `src/database/company.js`** (texto,
+servicios, precios, links, contacto). Editar ese archivo es suficiente para
+actualizar todo el sitio; `src/database/dev.js` tiene los datos del
+desarrollador. Los colores de marca (azul marino + dorado) están en
+`src/database/themes.js`. Las marcas `// EDITAR:` en el código señalan los
+placeholders que faltan por personalizar (URLs de Facebook/Instagram, etc.).
+
+La sección de propiedades **no es una plataforma de subida**: es una tarjeta
+que enlaza al catálogo de Facebook, donde la inmobiliaria publica las fotos.
+
+El formulario de contacto envía el mensaje por WhatsApp
+(`wa.me/56997367307`), y hay enlaces directos de teléfono y correo en todo
+el sitio.
 
 ## Quick Start
 

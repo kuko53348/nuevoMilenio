@@ -72,7 +72,7 @@ export const DEV = {
   // --- Cómo está construido el sitio -------------------------------------
   architecture: [
     {
-      icon: 'database',
+      icon: 'storage',
       title: 'Contenido centralizado',
       text: 'src/database/company.js guarda el 100% del contenido: contacto, servicios, cifras, FAQ y catálogo.',
     },

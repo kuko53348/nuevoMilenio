@@ -1,7 +1,7 @@
 // components/sections/CatalogSection.js
 // Catálogo de propiedades: el álbum vive en Facebook/Instagram y este módulo
 // invita a verlo y a escribir. Es una página estática, no una plataforma.
-import { Column, Row, Text, Icon, Button } from 'flet-box';
+import { Container, Column, Row, Text, Icon, Button } from 'flet-box';
 import { brand, gradients } from '../../database/themes.js';
 import { COMPANY, LINKS, SOCIAL } from '../../database/company.js';
 import { Section } from '../ui/Section.js';

@@ -1,12 +1,13 @@
 // service-worker.js - PWA offline support
-const CACHE_NAME = 'fletbox-v2';
+const CACHE_NAME = 'fletbox-v3';
 // Deployment prefix: a worker's own URL always sits at the app root, so this
 // is '/' at the host root and '/repo-name/' on a GitHub Pages project site.
 // Hard-coded '/' entries would miss every file under a subpath.
 const BASE = new URL('./', self.location).pathname;
 // The shipped (baked-in) shell, precached so the app opens with no connection.
-// loader.js owns a SEPARATE cache ('fletbox-ota') for downloaded bundles.
-const PRECACHE = [BASE, BASE + 'index.html', BASE + 'loader.js', BASE + 'config.json', BASE + 'src/app.js'];
+// (loader.js / config.json solo existen en proyectos con OTA de flet-box;
+// esta landing es estática, así que no se precachean.)
+const PRECACHE = [BASE, BASE + 'index.html', BASE + 'src/app.js'];
 
 self.addEventListener('install', event => {
   event.waitUntil(
@@ -59,7 +60,7 @@ self.addEventListener('activate', event => {
 // Hybrid caching:
 //  - Static assets (fonts/icons/images/css): cache-first (they are immutable
 //    per release and re-fetched only when missing).
-//  - Updatable shell (html/js/json, incl. src/app.js + config.json):
+//  - Updatable shell (html/js/json, incl. src/app.js):
 //    network-first so a new release is picked up immediately, falling back to
 //    the cache when offline. This is what keeps OTA correct: the service worker
 //    must never hand back a stale app.js while online.

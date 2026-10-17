@@ -43,7 +43,7 @@ const ContactRow = ({ icon, label, value, href }) => {
   return row;
 };
 
-export const ContactSection = ({ withForm = true }) => {
+export const ContactSection = ({ withForm = true } = {}) => {
   const subjectState = { value: COMPANY.contact.subjects[0] };
 
   // Campos del formulario (se leen al enviar).

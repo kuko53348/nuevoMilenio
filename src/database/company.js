@@ -106,7 +106,7 @@ export const COMPANY = {
         text: 'Hablas siempre con la misma persona: quien gestiona tu operación te conoce por nombre.',
       },
       {
-        icon: 'verified_document',
+        icon: 'verified',
         title: 'Cero letra chica',
         text: 'Te explicamos cada documento en palabras simples, antes de que firmes.',
       },
@@ -282,7 +282,7 @@ export const COMPANY = {
   // --- ¿Por qué elegirnos? ---
   differentiators: [
     {
-      icon: 'person_check',
+      icon: 'handshake',
       title: 'Un solo interlocutor',
       text: 'No te pasan de oficina en oficina: tu gestor es siempre la misma persona y responde directo.',
     },
@@ -302,6 +302,48 @@ export const COMPANY = {
       text: 'Manejamos datos sensibles, y lo hacemos con reserva, formalidad y respeto por tu privacidad.',
     },
   ],
+
+  // --- Cómo trabajamos contigo (página Info) ---
+  workingWithUs: {
+    eyebrow: 'Forma de trabajo',
+    title: 'Atención personal, cobertura nacional y papeles en regla',
+    subtitle:
+      'No importa si estás en Santiago, en el sur o en el extranjero: la gestión se coordina por WhatsApp, correo y notarías locales.',
+    items: [
+      {
+        icon: 'person',
+        title: 'Atención 1 a 1',
+        text: 'Hablas siempre con quien gestiona tu operación. Sin centros de atención ni cadenas de mensajes perdidos.',
+      },
+      {
+        icon: 'place',
+        title: 'Presencial y online',
+        text: 'Reuniones presenciales en Santiago y operación remota para el resto del país, con digitalización de documentos.',
+      },
+      {
+        icon: 'payments',
+        title: 'Sin sorpresas',
+        text: 'Te informamos el costo de cada trámite y la comisión antes de empezar. Si no estás de acuerdo, no avanzamos.',
+      },
+      {
+        icon: 'folder_shared',
+        title: 'Entrega ordenada',
+        text: 'Recibes tu expediente completo en físico y en digital: certificados, contratos, escrituras e inscripciones.',
+      },
+      {
+        icon: 'lock',
+        title: 'Confidencialidad',
+        text: 'Tus antecedentes financieros y familiares se manejan con reserva y se usan solo para tu operación.',
+      },
+      {
+        icon: 'support_agent',
+        title: 'Seguimiento post venta',
+        text: 'Después de la firma seguimos disponibles para renovaciones, sucesiones, impuestos y lo que surja.',
+      },
+    ],
+    note:
+      '¿Tienes una situación especial (sucesión, hipoteca, documentos extraviados, copropiedad)? Es lo nuestro: escríbenos y evaluamos el caso sin costo.',
+  },
 
   // --- Catálogo / redes (la galería vive en Facebook) ---
   catalog: {
