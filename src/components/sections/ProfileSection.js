@@ -32,10 +32,19 @@ const TimelineItem = ({ period, title, text, isLast }) =>
   Row({
     width: '100%',
     gap: 16,
-    alignItems: 'flex-start',
+    // 'stretch', not 'flex-start': the marker is a column whose connector line
+    // is `flex: 1`, so it only has height to distribute when the row gives it
+    // one. With 'flex-start' the marker collapsed to the dot's own height and
+    // the line between hitos never appeared.
+    alignItems: 'stretch',
     overflow: 'visible',
     children: [
       Column({
+        // Column viene con width:'100%' por defecto: dentro de este Row el
+        // marcador se quedaba con toda la fila (589px) y, como no encoge
+        // (`flex: '0 0 auto'`), aplastaba el texto contra su min-content
+        // (~70px), convirtiendo cada hito en una cinta vertical.
+        width: 'auto',
         flex: '0 0 auto',
         alignItems: 'center',
         gap: 4,
@@ -56,7 +65,10 @@ const TimelineItem = ({ period, title, text, isLast }) =>
                 width: 2,
                 flex: 1,
                 height: '100%',
-                bgColor: brand.border,
+                // `brand.border` (#E2E7EF) is a hairline meant for white cards:
+                // on this panel it was invisible, so the hitos quedaban flotando
+                // sin unir. El dorado claro es el mismo acento del punto.
+                bgColor: brand.goldLight,
                 overflow: 'visible',
               })
             : null,
@@ -301,6 +313,11 @@ export const ProfileSection = () =>
             width: '100%',
             maxWidth: 760,
             paddingLeft: 4,
+            // Container pinta `colors.surface` cuando no le pasas bgColor, y
+            // applyBrandTheme() la tiene en crema: sin esto la Trayectoria
+            // salía sobre un rectángulo gris duro, sin padding ni radio, que
+            // no venía de ningún diseño. La sección ya es blanca.
+            bgColor: 'transparent',
             overflow: 'visible',
             child: Column({
               gap: 0,
