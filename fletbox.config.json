@@ -1,10 +1,10 @@
 {
   "update": {
-    "url": "https://TU-USUARIO.github.io/TU-REPO/",
+    "url": "https://kuko53348.github.io/nuevoMilenio/",
     "mode": "prompt",
     "channel": "stable",
     "mandatory": false,
-    "minNativeVersion": "0.0.0",
+    "minNativeVersion": "1.0.1",
     "notes": ""
   }
 }
