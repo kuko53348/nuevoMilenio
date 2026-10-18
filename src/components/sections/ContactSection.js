@@ -6,6 +6,7 @@ import { brand } from '../../database/themes.js';
 import { COMPANY, CONTACT, LINKS, SOCIAL } from '../../database/company.js';
 import { Section } from '../ui/Section.js';
 import { SectionHeading } from '../ui/SectionHeading.js';
+import { PersonAvatar } from '../ui/Brand.js';
 
 const ContactRow = ({ icon, label, value, href }) => {
   const row = Row({
@@ -210,16 +211,11 @@ export const ContactSection = ({ withForm = true } = {}) => {
                 alignItems: 'center',
                 overflow: 'visible',
                 children: [
-                  Container({
-                    width: 52,
-                    height: 52,
-                    borderRadius: 26,
-                    bgColor: brand.gold,
-                    overflow: 'visible',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0,
-                    child: Text({ text: 'MA', size: 18, weight: '800', color: brand.navy }),
+                  PersonAvatar({
+                    src: CONTACT.photo,
+                    initials: CONTACT.initials,
+                    name: CONTACT.person,
+                    size: 52,
                   }),
                   Column({
                     width: 'auto',

@@ -1,11 +1,12 @@
 // components/sections/DevSections.js
 // Contenido de la sección DEV: perfil, stack, arquitectura y repositorios.
-import { Container, Column, Row, Text, Icon, Button, Chip, Image } from 'flet-box';
+import { Container, Column, Row, Text, Icon, Button, Chip } from 'flet-box';
 import { brand } from '../../database/themes.js';
 import { DEV } from '../../database/dev.js';
 import { Section } from '../ui/Section.js';
 import { SectionHeading } from '../ui/SectionHeading.js';
 import { IconBadge } from '../ui/IconBadge.js';
+import { PersonAvatar } from '../ui/Brand.js';
 
 const LinkButton = ({ icon, label, href }) =>
   Button({
@@ -43,26 +44,13 @@ export const DevProfileSection = () =>
             overflow: 'visible',
             shadow: `0 18px 40px ${brand.shadowStrong}`,
             children: [
-              DEV.photo
-                ? Image({
-                    src: DEV.photo,
-                    alt: DEV.name,
-                    width: 96,
-                    height: 96,
-                    borderRadius: 48,
-                    fit: 'cover',
-                    border: `3px solid ${brand.gold}`,
-                  })
-                : Container({
-                    width: 96,
-                    height: 96,
-                    borderRadius: 48,
-                    bgColor: brand.gold,
-                    overflow: 'visible',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    child: Text({ text: DEV.initials, size: 30, weight: '800', color: brand.navy }),
-                  }),
+              PersonAvatar({
+                src: DEV.photo,
+                initials: DEV.initials,
+                name: DEV.name,
+                size: 96,
+                border: `3px solid ${brand.goldLight}`,
+              }),
               Text({ text: DEV.name, size: 18, weight: '700', color: brand.white, align: 'center' }),
               Text({ text: DEV.handle, size: 13, color: brand.goldLight, align: 'center' }),
               Text({
@@ -112,6 +100,7 @@ export const DevProfileSection = () =>
                 overflow: 'visible',
                 children: [
                   LinkButton({ icon: 'code', label: 'GitHub', href: DEV.links.github }),
+                  LinkButton({ icon: 'chat', label: 'WhatsApp', href: DEV.links.whatsapp }),
                   LinkButton({ icon: 'language', label: 'Sitio web', href: DEV.links.site }),
                   LinkButton({ icon: 'work', label: 'LinkedIn', href: DEV.links.linkedin }),
                   LinkButton({ icon: 'mail', label: 'Correo', href: `mailto:${DEV.links.email}` }),

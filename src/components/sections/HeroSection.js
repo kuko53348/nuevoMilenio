@@ -3,6 +3,7 @@
 import { Container, Column, Row, Text, Icon, Button, Card } from 'flet-box';
 import { brand, gradients } from '../../database/themes.js';
 import { COMPANY, CONTACT, LINKS, YEARS_EXPERIENCE } from '../../database/company.js';
+import { PersonAvatar } from '../ui/Brand.js';
 import { fluid } from '../ui/responsive.js';
 
 const HeroChip = ({ text, icon = 'check_circle' }) =>
@@ -67,16 +68,13 @@ const ContactCard = () => {
               alignItems: 'center',
               overflow: 'visible',
               children: [
-                Container({
-                  width: 52,
-                  height: 52,
-                  borderRadius: 26,
+                PersonAvatar({
+                  src: CONTACT.photo,
+                  initials: CONTACT.initials,
+                  name: CONTACT.person,
+                  size: 52,
                   bgColor: brand.navy,
-                  overflow: 'visible',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0,
-                  child: Text({ text: 'MA', size: 18, weight: '700', color: brand.white }),
+                  color: brand.white,
                 }),
                 Column({
                   width: 'auto',
@@ -153,11 +151,21 @@ const ContactCard = () => {
   });
 };
 
+// El banner se usa como fondo del hero bajo un velo azul marino; sin banner,
+// el hero queda con el degradado liso de la marca.
+const heroBackground = COMPANY.banner
+  ? {
+      gradient: `${gradients.heroVeil}, url(${COMPANY.banner})`,
+      bgSize: 'cover',
+      bgPosition: 'center',
+    }
+  : { gradient: gradients.hero };
+
 export const HeroSection = () =>
   Container({
     width: '100%',
     flexShrink: 0,
-    gradient: gradients.hero,
+    ...heroBackground,
     flexDirection: 'column',
     alignItems: 'center',
     overflow: 'visible',

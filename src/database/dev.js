@@ -8,30 +8,31 @@
 
 export const DEV = {
   // --- Perfil -------------------------------------------------------------
-  name: 'Nombre del desarrollador', // ← EDITAR
-  handle: '@tu-usuario', // ← EDITAR
-  role: 'Desarrollo web, PWA y apps móviles', // ← EDITAR
-  initials: 'DV', // ← EDITAR (se muestran si no hay foto)
-  location: 'Chile', // ← EDITAR
+  name: 'Maenys Javier Quesada Reyes',
+  handle: '@kuko53348',
+  role: 'Desarrollo web, PWA y apps móviles',
+  initials: 'MQ',
+  location: 'Chile',
   bio:
     'Desarrollador independiente enfocado en sitios y aplicaciones ligeras: landing pages, PWAs y apps móviles publicadas desde una misma base de código. Me gusta trabajar sin dependencias innecesarias, con interfaces rápidas y contenido que se edita en un solo archivo.',
   // Si algún día agregas una foto, ponla en src/assets/ y escribe aquí la ruta.
-  photo: null, // ← EDITAR, ej: './src/assets/dev-foto.png'
+  photo: './src/assets/dev_avatar.png',
 
   // --- Enlaces ------------------------------------------------------------
   links: {
-    github: 'https://github.com/tu-usuario', // ← EDITAR
+    github: 'https://github.com/kuko53348/',
+    whatsapp: 'https://wa.me/56983957903',
     site: 'https://tu-sitio.cl', // ← EDITAR
-    email: 'tu-correo@ejemplo.cl', // ← EDITAR
-    linkedin: 'https://www.linkedin.com/in/tu-usuario', // ← EDITAR
+    email: 'kuko53348@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/maenys-javier-quesada-reyes-a71ab030a',
   },
 
   // --- Repositorios destacados -------------------------------------------
   repos: [
     {
-      name: 'nuevomilenio-landing', // ← EDITAR
+      name: 'nuevoMilenio',
       description: 'Sitio web de Propiedades Nuevo Milenio construido con Flet-Box.',
-      url: 'https://github.com/tu-usuario/nuevomilenio-landing', // ← EDITAR
+      url: 'https://github.com/kuko53348/nuevoMilenio',
       language: 'JavaScript',
       stars: 0,
     },
@@ -97,7 +98,7 @@ export const DEV = {
   credits:
     'Este sitio fue diseñado y desarrollado como pieza de portafolio para un cliente real del rubro inmobiliario.',
   disclaimer:
-    'Espacio reservado para el desarrollador: reemplaza los datos de este archivo por los reales.',
+    'Desarrollado por Maenys Javier Quesada Reyes (@kuko53348) con Flet-Box: JavaScript vanilla, PWA y apps móviles desde una misma base de código.',
 };
 
 export default DEV;

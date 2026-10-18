@@ -1,5 +1,7 @@
 // service-worker.js - PWA offline support
-const CACHE_NAME = 'fletbox-v3';
+// v4: los iconos de marca reemplazaron a los del template conservando el mismo
+// nombre de archivo, así que hay que descartar la caché anterior.
+const CACHE_NAME = 'fletbox-v4';
 // Deployment prefix: a worker's own URL always sits at the app root, so this
 // is '/' at the host root and '/repo-name/' on a GitHub Pages project site.
 // Hard-coded '/' entries would miss every file under a subpath.

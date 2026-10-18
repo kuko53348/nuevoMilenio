@@ -5,6 +5,7 @@ import { brand } from '../../database/themes.js';
 import { COMPANY, CONTACT, LINKS, YEARS_EXPERIENCE } from '../../database/company.js';
 import { Section } from '../ui/Section.js';
 import { IconBadge } from '../ui/IconBadge.js';
+import { PersonAvatar } from '../ui/Brand.js';
 
 const FichaRow = ({ icon, label, value }) =>
   Row({
@@ -102,16 +103,13 @@ export const ProfileSection = () =>
             overflow: 'visible',
             shadow: `0 18px 40px ${brand.shadowStrong}`,
             children: [
-              Container({
-                width: 96,
-                height: 96,
-                borderRadius: 48,
-                bgColor: brand.gold,
-                overflow: 'visible',
-                alignItems: 'center',
-                justifyContent: 'center',
+              PersonAvatar({
+                src: CONTACT.photo,
+                initials: CONTACT.initials,
+                name: CONTACT.person,
+                size: 96,
+                border: `3px solid ${brand.goldLight}`,
                 shadow: `0 10px 24px ${brand.shadowStrong}`,
-                child: Text({ text: 'MA', size: 32, weight: '800', color: brand.navy }),
               }),
               Text({
                 text: CONTACT.person,

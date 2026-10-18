@@ -15,6 +15,10 @@
 export const CONTACT = {
   person: 'Moises Araya Carmona',
   role: 'Corredor de propiedades y gestor de trámites',
+  // Foto redonda del vendedor: ponla en src/assets/ y escribe la ruta aquí.
+  // Mientras sea null se muestran las iniciales.
+  photo: null, // ← EDITAR, ej: './src/assets/vendor_avatar.png'
+  initials: 'MA',
   email: 'propiedadesnuevomilenio@gmail.com',
   phone: '+56997367307',
   phoneDisplay: '+56 9 9736 7307',
@@ -69,6 +73,11 @@ export const COMPANY = {
   name: 'Propiedades Nuevo Milenio',
   shortName: 'Nuevo Milenio',
   monogram: 'NM',
+  // Identidad visual (src/assets/). El logo va en barra, drawer, footer,
+  // favicon e iconos de la app; el banner es la imagen de portada y de
+  // compartir en redes.
+  logo: './src/assets/logo.png',
+  banner: './src/assets/banner.jpg',
   tagline: 'Más de 25 años gestionando tu patrimonio',
   claim: 'Vendemos, arrendamos y ordenamos tu documentación sin que tengas que preocuparte por nada.',
 

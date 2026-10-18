@@ -3,6 +3,7 @@
 import { Drawer, DrawerItem, Container, Column, Row, Text, Icon, Button, colors, closeDrawer, goTo } from 'flet-box';
 import { brand } from '../../database/themes.js';
 import { COMPANY, CONTACT, LINKS, SOCIAL, NAV_ITEMS } from '../../database/company.js';
+import { BrandMark } from '../ui/Brand.js';
 
 const Header = () =>
   Container({
@@ -15,16 +16,7 @@ const Header = () =>
       alignItems: 'flex-start',
       overflow: 'visible',
       children: [
-        Container({
-          width: 52,
-          height: 52,
-          borderRadius: 16,
-          bgColor: brand.gold,
-          overflow: 'visible',
-          alignItems: 'center',
-          justifyContent: 'center',
-          child: Text({ text: COMPANY.monogram, size: 20, weight: '800', color: brand.navy }),
-        }),
+        BrandMark({ src: COMPANY.logo, monogram: COMPANY.monogram, size: 56 }),
         Text({ text: COMPANY.name, size: 18, weight: '700', color: brand.white }),
         Text({ text: COMPANY.tagline, size: 12, color: 'rgba(255,255,255,0.75)', lineHeight: 1.4 }),
       ],

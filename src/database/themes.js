@@ -31,6 +31,9 @@ export const brand = {
 
 export const gradients = {
   hero: `linear-gradient(135deg, ${brand.navyDark} 0%, ${brand.navy} 55%, ${brand.navyLight} 100%)`,
+  // Velo azul marino que se superpone al banner del hero para que el texto
+  // blanco siga siendo legible sobre la foto.
+  heroVeil: `linear-gradient(115deg, rgba(7, 23, 48, 0.94) 0%, rgba(11, 37, 69, 0.80) 48%, rgba(11, 37, 69, 0.96) 100%)`,
   gold: `linear-gradient(135deg, ${brand.goldDark} 0%, ${brand.gold} 60%, ${brand.goldLight} 100%)`,
   soft: `linear-gradient(180deg, ${brand.white} 0%, ${brand.cream} 100%)`,
 };

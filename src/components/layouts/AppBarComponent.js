@@ -6,9 +6,10 @@ import { AppBar, Column, Row, Container, Text, Icon, Button, colors, openDrawer 
 import { brand } from '../../database/themes.js';
 import { COMPANY, CONTACT, LINKS } from '../../database/company.js';
 import { NavTabs } from './NavTabs.js';
+import { BrandMark } from '../ui/Brand.js';
 import { isMobile } from '../ui/responsive.js';
 
-const BrandMark = () => {
+const BrandRow = () => {
   const compact = isMobile();
   return Row({
     width: 'auto',
@@ -16,17 +17,10 @@ const BrandMark = () => {
     alignItems: 'center',
     overflow: 'visible',
     children: [
-      Container({
-        width: 38,
-        height: 38,
-        minWidth: 38,
-        borderRadius: 12,
-        bgColor: brand.gold,
-        overflow: 'visible',
-        alignItems: 'center',
-        justifyContent: 'center',
-        shadow: `0 2px 8px ${brand.shadowStrong}`,
-        child: Text({ text: COMPANY.monogram, size: 15, weight: '800', color: brand.navy }),
+      BrandMark({
+        src: COMPANY.logo,
+        monogram: COMPANY.monogram,
+        size: compact ? 36 : 42,
       }),
       Column({
         width: 'auto',
@@ -74,7 +68,7 @@ export const AppBarComponent = () => {
   const compact = isMobile();
 
   const appBar = AppBar({
-    title: BrandMark(),
+    title: BrandRow(),
     backgroundColor: brand.navy,
     titleColor: brand.white,
     iconColor: brand.white,
