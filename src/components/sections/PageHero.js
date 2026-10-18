@@ -2,7 +2,24 @@
 // Encabezado compacto para las páginas interiores (Info, Acerca de, Dev).
 import { Container, Column, Row, Text, Icon, Button } from 'flet-box';
 import { brand, gradients } from '../../database/themes.js';
-import { LINKS } from '../../database/company.js';
+import { LINKS, COMPANY } from '../../database/company.js';
+import { CONTENT_MAX } from '../ui/responsive.js';
+
+// Piso de altura de la banda, medido sobre la más alta de las tres pantallas
+// (Acerca de, que además del texto lleva el CTA): 334px, redondeado a 336.
+// Sin el piso, el alto era lo que pedía el contenido de cada pantalla y la
+// banda saltaba al cambiar de pestaña (Info 321 / Acerca 334 / Dev 294).
+const BAND_MIN_HEIGHT = 336;
+
+// Misma foto del hero de Inicio, bajo un velo más cerrado: la banda es baja y
+// el texto va a la izquierda, así que aquí la imagen solo se insinúa.
+const heroBackground = COMPANY.banner
+  ? {
+      gradient: `${gradients.heroVeilSoft}, url(${COMPANY.banner})`,
+      bgSize: 'cover',
+      bgPosition: 'center',
+    }
+  : { gradient: gradients.hero };
 
 export const PageHero = ({
   eyebrow,
@@ -15,7 +32,9 @@ export const PageHero = ({
   Container({
     width: '100%',
     flexShrink: 0,
-    gradient: gradients.hero,
+    ...heroBackground,
+    minHeight: BAND_MIN_HEIGHT,
+    justifyContent: 'center',
     flexDirection: 'column',
     alignItems: 'center',
     overflow: 'visible',
@@ -24,7 +43,12 @@ export const PageHero = ({
     borderBottom: `3px solid ${brand.gold}`,
     child: Column({
       width: '100%',
-      maxWidth: 900,
+      // Debe ser el mismo tope de Section: con 900 el bloque quedaba centrado
+      // dentro de un contenedor de 1120 y su borde izquierdo se iba
+      // (1120-900)/2 = 110px hacia la derecha respecto del contenido blanco
+      // que viene debajo. El largo de línea ya lo controlan los maxWidth del
+      // título y del subtítulo.
+      maxWidth: CONTENT_MAX,
       gap: 16,
       alignItems: 'flex-start',
       overflow: 'visible',
